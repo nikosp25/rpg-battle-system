@@ -1,7 +1,8 @@
-package com.game.rpg.entities;
+package com.game.rpg.entities.classes;
 
 import com.game.rpg.components.Attributes;
 import com.game.rpg.components.CombatStats;
+import com.game.rpg.entities.Entity;
 
 public class Mage extends Entity {
     public Mage (String name) {
