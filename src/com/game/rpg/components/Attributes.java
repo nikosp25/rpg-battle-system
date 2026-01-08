@@ -64,4 +64,16 @@ public class Attributes {
     public void setCurrentMana(int currentMana) {
         this.currentMana = currentMana;
     }
+
+    @Override
+    public String toString() {
+        return "Attributes{" +
+                "maxHealth = " + maxHealth +
+                ", currentHealth = " + currentHealth +
+                ", maxStamina = " + maxStamina +
+                ", currentStamina = " + currentStamina +
+                ", maxMana = " + maxMana +
+                ", currentMana = " + currentMana +
+                '}';
+    }
 }

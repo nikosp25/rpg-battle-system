@@ -104,6 +104,22 @@ public class CombatStats {
     public void setCurrentArmor(double currentArmor) {
         this.currentArmor = currentArmor;
     }
+
+    @Override
+    public String toString() {
+        return "CombatStats{" +
+                "baseDamage = " + baseDamage +
+                ", crtRate = " + crtRate +
+                ", crtDamage = " + crtDamage +
+                ", dodgeChance = " + dodgeChance +
+                ", blockChance = " + blockChance +
+                ", initiative = " + initiative +
+                ", armor = " + armor +
+                ", magicDmg = " + magicDmg +
+                ", magicRes = " + magicRes +
+                ", currentArmor = " + currentArmor +
+                '}';
+    }
 }
 
 

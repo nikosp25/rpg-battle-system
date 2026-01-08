@@ -11,4 +11,22 @@ public class Mage extends Entity {
                 new CombatStats(10.0,0.05,2.0,0.07,0.01,6,15.0,40.0,25.0));
     }
 
+    /**
+     * Casts fireball spell,
+     * costs 20 mana.
+     * Deals damage based of the magic dmg stat.
+     * @param target the entity to attack.
+     */
+    public void castFireball(Entity target) {
+        double manaCost = 20;
+       if (!spendMana(manaCost)){
+           return;
+       }
+
+       double fireDamage = calculateAttack(true);
+
+        System.out.println(getName() + " casts Fireball!");
+        target.takeDamage(fireDamage,true);
+    }
+
 }
