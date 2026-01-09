@@ -116,9 +116,18 @@ public class BattleManager {
                 if (!target.isAlive()) {
 
                     enemies.remove(answerCheck);
-                    if (enemies.isEmpty())
+                    if (encounterNumber == 5 && target instanceof Dragon) {
+                        System.out.println("\n************************************************");
+                        System.out.println("Borgoth falls with a deafening roar! The kingdom is saved.");
+                        System.out.println("CONGRATULATIONS! YOU HAVE CLEARED THE DUNGEON!");
+                        System.out.println("************************************************");
+
+                        return; // This exits the battle and goes back to Main
+                    }
+                    if (enemies.isEmpty()) {
                         System.out.println("You defeated all the enemies! \n Encounter cleared!\n");
                         break;
+                    }
                 }
             }
 
