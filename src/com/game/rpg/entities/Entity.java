@@ -191,14 +191,39 @@ public class Entity {
     //                          ATTACK LOGIC
     // ========================================================================
 
+    public void attack(Entity target) {
+        System.out.println("entity attacks");
+    }
+
     /**
-     * Checks the entity's current mana to see if they can affdord to cast.
+     * Checks the entity's current stamina to see if they can afford to use their skill
+     * and deducts the cost from their stamina pool if they can.
+     * @param cost the cost of the skill
+     * @return true if they have enough stamina, false otherwise.
+     */
+    protected boolean spendStamina(int cost) {
+        int currentStamina = getAttributes().getCurrentStamina();
+        if (cost <= currentStamina) {
+            getAttributes().setCurrentStamina(currentStamina - cost);
+            return true;
+        }else {
+            System.out.println("Not enough stamina!");
+            return false;
+        }
+
+
+    }
+
+    /**
+     * Checks the entity's current mana to see if they can afford to cast
+     * and deducts the cost from their mana pool if they can.
      * @param cost the cost of the spell.
      * @return true if they have enough mana, false otherwise.
      */
-    protected boolean spendMana(double cost) {
+    protected boolean spendMana(int cost) {
         int currentMana = getAttributes().getCurrentMana();
         if (cost <= currentMana) {
+            getAttributes().setCurrentMana(currentMana - cost);
             return true;
         } else {
             System.out.println("Not enough mana!");
