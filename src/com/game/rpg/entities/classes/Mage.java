@@ -17,15 +17,17 @@ public class Mage extends Entity {
      * Deals damage based of the magic dmg stat.
      * @param target the entity to attack.
      */
-    public void castFireball(Entity target) {
-        double manaCost = 20;
+
+    @Override
+    public void attack(Entity target) {
+        int manaCost = 20;
        if (!spendMana(manaCost)){
            return;
        }
 
        double fireDamage = calculateAttack(true);
 
-        System.out.println(getName() + " casts Fireball!");
+        System.out.println(getName() + " casts Fireball on " + target.getName() + "!");
         target.takeDamage(fireDamage,true);
     }
 
