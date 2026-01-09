@@ -10,4 +10,25 @@ public class Rogue extends Entity {
                 new CombatStats(30.0,0.3,1.4,0.3,0.010,18,25.0,7.0,12.0));
 
     }
+
+    /**
+     * Uses the backstab skill,
+     * costs 20 stamina.
+     * Deals damage based of the physical dmg stat.
+     * @param target the entity to attack.
+     */
+    @Override
+    public void attack(Entity target) {
+        int cost = 20;
+        if (!spendStamina(cost)){
+            return;
+        }
+
+        double backstab = calculateAttack(false);
+
+        System.out.println(getName() + " uses backstab on " + target.getName() + "!");
+        target.takeDamage(backstab,false);
+    }
+
+
 }
