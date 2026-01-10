@@ -107,19 +107,17 @@ public class CombatStats {
 
     @Override
     public String toString() {
-        return "CombatStats{" +
-                "baseDamage = " + baseDamage +
-                ", crtRate = " + crtRate +
-                ", crtDamage = " + crtDamage +
-                ", dodgeChance = " + dodgeChance +
-                ", blockChance = " + blockChance +
-                ", initiative = " + initiative +
-                ", armor = " + armor +
-                ", magicDmg = " + magicDmg +
-                ", magicRes = " + magicRes +
-                ", currentArmor = " + currentArmor +
-                '}';
+        return String.format(
+                "Offense: [Dmg: %.0f | Mag: %.0f | Crit: %.0f%% (x%.1f)]\n" +
+                        "Defense: [Armor: %.0f | Res: %.0f | Block: %.0f%% | Dodge: %.0f%%]\n" +
+                        "Utility: [Initiative: %d | Current Armor: %.0f]",
+                baseDamage, magicDmg, (crtRate * 100), crtDamage,
+                armor, magicRes, (blockChance * 100), (dodgeChance * 100),
+                initiative, currentArmor
+        );
     }
+
+
 }
 
 
