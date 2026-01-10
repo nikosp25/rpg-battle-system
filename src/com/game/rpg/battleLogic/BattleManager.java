@@ -70,7 +70,7 @@ public class BattleManager {
      * Handles the core turn-based combat logic.
      * Loops continuously, giving every Hero a turn to pick a target and attack,
      * followed by the Enemies picking random targets.
-     * * Critical job: Checks for death after every single attack and removes
+     *  Checks for death after every single attack and removes
      * entities from the lists immediately so they can't be attacked again.
      *
      * @param party   Your team of heroes.
