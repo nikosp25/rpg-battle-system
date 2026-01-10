@@ -1,20 +1,27 @@
 # Java Console RPG
 
-A simple turn-based combat game played entirely in the terminal.
+A turn-based combat game played entirely in the terminal. I created this project to practice Object-Oriented Programming (OOP) concepts and Java syntax.
 
-## How it works
-The game runs through a series of 5 encounters. The player selects a character class and fights through waves of enemies, ending in a boss fight against a Dragon.
+## ✅ Project Status
+**Completed.** This project was created for me to practice certain java concepts and is done. 
 
-## Project Structure
-* **`Main.java`**: Handles the primary game loop and initialization.
-* **`ui` package**: Contains classes for narration, menus, and input validation.
-* **`entities` package**: Contains the base Entity class and specialized subclasses (Mage, Knight, etc.).
-* **`BattleManager.java`**: Manages the turn-based logic and win/loss states.
+## 📖 Overview
+The game simulates a dungeon crawler where the player leads a party of 3 heroes. The game runs through a series of random encounters, ending in a guaranteed boss fight against a Dragon at the 5th encounter.
 
-## Key Features
-* **Turn-based logic**: Heroes and enemies take turns until one side is defeated.
-* **Input Validation**: Prevents crashes if a user enters a string instead of a number.
-* **Polymorphism**: Uses method overriding so different classes have unique attacks.
+## 💻 Concepts Applied
+This project was built to demonstrate specific coding concepts:
+* **Inheritance & Polymorphism**: Created a base `Entity` class with `Knight`, `Mage`, and `Rogue` subclasses that override attack methods and `toString` for stats.
+* **Game Loop Logic**: Implemented a `do-while` loop in `Main.java` to handle game states and allow the user to replay without restarting the program.
+* **Input Validation**: Used `try-catch` blocks and scanner checks to prevent the application from crashing if the user enters invalid text.
+* **Encapsulation**: Separated the combat logic into a `BattleManager` class to keep the `Main` class clean.
 
-## Current Status
-The core game loop is functional. I'm currently working on adding a "Play Again" feature to the main menu.
+## 📂 Project Structure
+* **`Main.java`**: The entry point. Handles the "Play Again" loop and character creation.
+* **`BattleManager.java`**: The engine that runs the turn-based logic, enemy spawning, and win/loss conditions.
+* **`entities/`**: Contains the character classes (Heroes and Monsters).
+* **`ui/`**: Handles narration and text formatting.
+
+
+
+***
+*Created as a personal project for learning Java.*
